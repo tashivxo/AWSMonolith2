@@ -313,6 +313,31 @@ function showNotification(message, type = 'info') {
     // In a real app, you'd show a toast notification
 }
 
+// ==================== DARK MODE ====================
+
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+const body = document.body;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+if (currentTheme === 'dark') {
+    body.classList.add('dark-mode');
+    themeToggle.innerHTML = '☀️ Light Mode';
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    if (body.classList.contains('dark-mode')) {
+        themeToggle.innerHTML = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeToggle.innerHTML = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+    }
+});
+
 // Load dashboard on page load
 window.addEventListener('load', () => {
     loadDashboard();
