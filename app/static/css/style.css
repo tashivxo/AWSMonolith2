@@ -15,18 +15,18 @@
 
 /* Dark Mode Variables */
 body.dark-mode {
-    --primary-color: #FF9900;
+    --primary-color: #FFB84D;
     --secondary-color: #e0e0e0;
     --success-color: #4caf50;
     --danger-color: #f44336;
     --light-bg: #2a2a2a;
-    --border-color: #444;
+    --border-color: #444444;
     --text-color: #e0e0e0;
     --bg-color: #1a1a1a;
-    --card-bg: #2a2a2a;
-    --input-bg: #333;
-    --navbar-bg: #0d0d0d;
-    --footer-bg: #0d0d0d;
+    --card-bg: #2d2d2d;
+    --input-bg: #333333;
+    --navbar-bg: #0f0f0f;
+    --footer-bg: #0f0f0f;
 }
 
 * {
@@ -269,6 +269,7 @@ input:focus, textarea:focus, select:focus {
 
 .item-card:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
 }
 
 .item-card h3 {
@@ -315,13 +316,16 @@ footer {
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     margin-left: 1rem;
+    font-size: 0.9rem;
 }
 
 .theme-toggle:hover {
     background-color: var(--primary-color);
     color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 153, 0, 0.3);
 }
 
 .dark-mode .empty-message {
