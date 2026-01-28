@@ -1,0 +1,84 @@
+AWS Monolithic Architecture for Internal Business Applications: 
+ 
+
+Designed for Project Management, Inventory Tracking, and Internal CRM 
+
+ 
+
+Introduction 
+
+Internal business applications such as project management tools, 
+inventory tracking systems, and internal CRMs are ideal candidates 
+for a monolithic architecture. These applications typically serve a 
+limited number of users and developers, making a unified codebase and 
+infrastructure efficient and maintainable. 
+
+Architecture Overview 
+
+Architecture Style: Monolithic 
+
+AWS Services Used: 
+
+- Amazon EC2: Hosts the monolithic application 
+
+- Elastic Load Balancer (ALB): Distributes incoming traffic 
+
+- Amazon RDS: Stores relational data 
+
+- Amazon S3: Stores static assets and backups 
+
+- Amazon CloudFront: Caches and delivers static content 
+
+- Amazon VPC: Provides networking with public/private subnets 
+
+- IAM: Manages access control 
+
+- Amazon CloudWatch: Monitors logs and metrics 
+
+- AWS Certificate Manager (ACM): Secures endpoints with HTTPS 
+
+Workflow Description 
+
+1. User sends HTTPS request. 
+
+2. CloudFront caches and forwards request to ALB. 
+
+3. ALB routes request to EC2 instance. 
+
+4. EC2 monolithic app processes request. 
+
+5. App queries RDS for data and S3 for static assets. 
+
+6. Response flows back through ALB and CloudFront to user. 
+
+Data Flow 
+
+- Application data stored in Amazon RDS. 
+
+- Static assets stored in Amazon S3 and cached via CloudFront. 
+
+- Logs and metrics captured by CloudWatch. 
+
+- IAM enforces least-privilege access. 
+
+- ACM provides HTTPS encryption. 
+
+Use Case Examples 
+
+- Project Management Tool 
+
+- Inventory/Asset Tracking System 
+
+- Internal CRM 
+
+Architecture Diagram 
+
+![AWS Monolithic Architecture Diagram](./Screenshot 2026-01-13 125640.png)
+ 
+
+Conclusion 
+
+This monolithic architecture provides a scalable, secure, and 
+cost-effective solution for internal business applications. 
+It leverages AWS best practices and services to ensure reliability 
+and maintainability. 
